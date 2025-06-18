@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast Genres</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="main-header">
+        <div class="header-left">
+      <img src="images/3y2mdbzd.png" alt="podcast logo" id="logo" />
+      <h1>PodcastApp</h1>
+      </div>
+        <div class="header-right">
+            <img src="images/seach-icon.svg" alt="search" class="icon"/>
+            <img src="images/avatar.png" alt="User Profile" class="avatar"/>
+    </header>
+    <main id="genre-container">
+        <section class="filters">
+            <label>
+            <h3>Filter by:</h3>
+            <select class="genre-filter" id="genre-filter-p">
+            <option value="all">All Genres</option>
+            </select>
+            <select class="sort-filter" id="sort-filter-p">
+                <option value="recent">Recently Updated</option>
+                <option value="title">Title</option>
+            </select>
+            </label>
+        </section>
+        
+
+
+            </select>
+            
+      <!--Genres will be rendered here-->
+    </main>
+
+    <!--Modal Template (Hidden by default)-->
+    <div id="genre-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="modal-body">
+          <!--Genre details will be rendered here(dynamically)-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
