@@ -1,6 +1,6 @@
 import { createPodcastCard } from "./PodcastCard.js";
 import { genres } from "../data.js";
-
+import { openModal } from "./modalManager.js";
 /**
  * Converts genre IDs to names.
  * @param {Object} podcast
@@ -23,6 +23,13 @@ export function renderPodcasts(container, list) {
   list.forEach((podcast) => {
     const genreNames = getGenreNames(podcast);
     const card = createPodcastCard(podcast, genreNames);
+    //click event listener for the card to open the modal
+    card.addEventListener("click", () => {
+      openModal({
+        ...podcast,
+        genre: genreNames.join(", "), //pass genre as a string
+      });
+    });
     container.appendChild(card);
   });
 }

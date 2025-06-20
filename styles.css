@@ -213,6 +213,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
 }
 
 .modal-content {
@@ -221,18 +226,18 @@ h1 {
   border-radius: 6px;
   width: 90%;
   max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
 }
 
 .close {
-  position: absolute;
+  position : absolute;
   top: 10px;
   right: 16px;
   font-size: 24px;
   color: #333;
   cursor: pointer;
+  z-index: 1001;
 }
 
-.hidden {
-  display: none;
-}
