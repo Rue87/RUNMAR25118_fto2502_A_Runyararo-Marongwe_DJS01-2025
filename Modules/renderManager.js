@@ -2,9 +2,10 @@ import { createPodcastCard } from "./PodcastCard.js";
 import { genres } from "../data.js";
 import { openModal } from "./modalManager.js";
 /**
+ * Abstraction: Hides the detail of how genre IDs are converted to names.
  * Converts genre IDs to names.
  * @param {Object} podcast
- * @returns {string[]}
+ * @returns {string[]} array of genre names
  */
 function getGenreNames(podcast) {
   return podcast.genres.map((id) => {

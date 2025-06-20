@@ -142,20 +142,28 @@ h1 {
   font-weight: 600;
   margin: 0.5em 0 0.3em;
   color: #333;
+  line-height: 1.3;
 }
 
-.podcast-seasons,
-.podcast-date {
+.podcast-seasons{
   color: #444;
   margin: 0 0 0.5em;
   font-size: 0.85rem;
 }
+.podcast-date{
+  color: #444;
+  font-size: 0.85rem;
+  margin-top: auto;
+ padding-top: 10px;
+}
 
 .genre-badges {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2px;
   margin-bottom: 0.5rem;
+  margin: 0 10px 10px;
 }
 
 .badge {
@@ -165,12 +173,14 @@ h1 {
   font-size: 0.75rem;
   border-radius: 4px;
   color: #333;
-   margin: 2px 4px 0 0;
+  margin: 2px 4px 0 0;
+  white-space: nowrap;
 }
 
 .podcast-updated {
   font-size: 0.8em;
   color: #777;
+  
 }
 
 .podcast-card:hover {
@@ -179,7 +189,7 @@ h1 {
 
 .podcast-card h2 {
   margin-top: 0;
-  font-size: 1.3em;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -214,6 +224,8 @@ h1 {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  display: flex;
+  overflow: auto;
 }
 
 .modal.hidden {
@@ -224,20 +236,173 @@ h1 {
   background-color: #fff;
   padding: 24px;
   border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   width: 90%;
   max-width: 600px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
+/*close button for modal*/
 .close {
   position : absolute;
   top: 10px;
   right: 16px;
-  font-size: 24px;
+  font-size: 28px;
   color: #333;
   cursor: pointer;
   z-index: 1001;
 }
 
+/* Modal Body Layout ( */
+#modal-body {
+    display: flex;
+    flex-direction: column; /* Stacks inner sections vertically */
+    gap: 0;
+}
+.modal-header-section{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modal-podcast-title {
+    font-size: 2em;
+    color: #333;
+    text-align: left;
+    margin-bottom: 20px; /* Space below title */
+}
+.modal-main-info {
+    display: flex; 
+    gap: 25px; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    margin-bottom: 25px;
+}
+
+.modal-podcast-cover {
+    width: 180px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    flex-shrink: 0; 
+}
+.modal-text-details {
+    flex: 1; /* Allows this section to take up remaining space */
+    display: flex;
+    flex-direction: column; /* Stacks description, genres, updated date */
+    gap: 10px; 
+    min-width: 250px; /* Ensure description has enough space before wrapping */
+}
+.description-heading{
+  font-size: 18px;
+  color: #333;
+  margin-top: 2px;; 
+  font-weight: bold; 
+}
+
+.modal-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 5px;
+}
+
+.modal-genres p{
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 5px; /* Space below genres and updated date */
+}
+.modal-last-updated{
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.modal-genres span {
+    font-weight: normal; 
+    color: #333; /* Darker color for the actual genres */
+}
+
+/* Seasons Section Styling */
+.modal-seasons-section {
+    margin-top: 0;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Separator line */
+}
+.modal-seasons-section h4 { 
+    font-size: 24px; 
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+.modal-season-list {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.modal-season-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd; 
+}
+
+.modal-season-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.modal-season-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-episode-count {
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 20px;
+        max-width: 95%; /* Adjust for smaller screens */
+    }
+    .modal-header-section {
+        text-align: center; 
+
+    .modal-main-info {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+    .modal-podcast-title {
+        font-size: 28px; 
+        margin-bottom: 15px;
+    }
+
+    .modal-podcast-cover {
+        width: 150px; 
+        height: 150px;
+        margin-bottom: 15px; 
+    }
+
+    .modal-text-details {
+        min-width: unset; /* Remove min-width to allow full flexibility */
+        width: 100%; /* Take full width */
+    }
+
+    .modal-genres p,
+    .modal-last-updated {
+        text-align: center; /* Center genre and updated date */
+    }
+
+    .modal-seasons-section h3 {
+        text-align: center;
+    }
+}}
