@@ -24,6 +24,7 @@ export function renderPodcasts(container, list) {
   list.forEach((podcast) => {
     const genreNames = getGenreNames(podcast);
     const card = createPodcastCard(podcast, genreNames);
+
     //click event listener for the card to open the modal
     card.addEventListener("click", () => {
       openModal({

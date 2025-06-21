@@ -1,4 +1,8 @@
 /*style.css*/
+/**
+ * @section Header Styles
+ * @description Styles for the main application header, including branding and navigation.
+ */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -39,7 +43,11 @@ h1 {
   margin: 0;
   color: #111;
 }
-/*Main content area(holds filters and  podcast grids)*/
+
+/**
+ * @section Main Content Area
+ * @description Styles for the primary content wrapper that holds filters and podcast grid.
+ */
 #main-content {
   max-width: 1200px;
   margin: 20px auto;
@@ -76,22 +84,31 @@ h1 {
   width: 100px;
   background-color: #fff;
   cursor: pointer;
+  border-radius: 4px;
 }
 .sort-filter {
   height: 20px;
   width: auto;
   background-color: #fff;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 /* --- PODCAST CARD SPECIFIC STYLES --- */
+
+/**
+ * @section Podcast Grid
+ * @description Styles for the container holding all individual podcast cards.**/
 #podcast-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 0; /* Padding is handled by #main-content */
 }
-
+/**
+ * @section Individual Podcast Card
+ * @description Styles for the interactive preview card of each podcast.
+ */
 .podcast-card {
   background-color: #fff;
   border-radius: 8px;
@@ -101,7 +118,7 @@ h1 {
   cursor: pointer;
 }
 
-.podcast-cover-wraper{
+.podcast-cover-wraper {
   width: 100%;
   height: 150px;
   margin-bottom: 0.75rem;
@@ -111,16 +128,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .cover-img {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  display : block;
+  display: block;
   border-radius: 6px;
-  
 }
 
 .podcast-cover {
@@ -145,16 +160,16 @@ h1 {
   line-height: 1.3;
 }
 
-.podcast-seasons{
+.podcast-seasons {
   color: #444;
   margin: 0 0 0.5em;
   font-size: 0.85rem;
 }
-.podcast-date{
+.podcast-date {
   color: #444;
   font-size: 0.85rem;
   margin-top: auto;
- padding-top: 10px;
+  padding-top: 10px;
 }
 
 .genre-badges {
@@ -180,7 +195,6 @@ h1 {
 .podcast-updated {
   font-size: 0.8em;
   color: #777;
-  
 }
 
 .podcast-card:hover {
@@ -213,6 +227,10 @@ h1 {
 }
 
 /* Modal Styling */
+/**
+ * @section Modal Overlay
+ * @description Styles for the full-screen overlay that contains the podcast detail modal.
+ */
 .modal {
   position: fixed;
   top: 0;
@@ -231,7 +249,10 @@ h1 {
 .modal.hidden {
   display: none;
 }
-
+/**
+ * @section Modal Content Container
+ * @description Styles for the main white box holding the podcast's detailed information.
+ */
 .modal-content {
   background-color: #fff;
   padding: 24px;
@@ -248,7 +269,7 @@ h1 {
 }
 /*close button for modal*/
 .close {
-  position : absolute;
+  position: absolute;
   top: 10px;
   right: 16px;
   font-size: 28px;
@@ -259,150 +280,156 @@ h1 {
 
 /* Modal Body Layout ( */
 #modal-body {
-    display: flex;
-    flex-direction: column; /* Stacks inner sections vertically */
-    gap: 0;
+  display: flex;
+  flex-direction: column; /* Stacks inner sections vertically */
+  gap: 0;
 }
-.modal-header-section{
+.modal-header-section {
   width: 100%;
   margin-bottom: 20px;
 }
 
 .modal-podcast-title {
-    font-size: 2em;
-    color: #333;
-    text-align: left;
-    margin-bottom: 20px; /* Space below title */
+  font-size: 2em;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px; /* Space below title */
 }
+
+/**
+ * @section Modal Main Info Section
+ * @description Styles for the section containing the cover image and textual details (description, genres, date).
+ */
 .modal-main-info {
-    display: flex; 
-    gap: 25px; 
-    align-items: flex-start; 
-    flex-wrap: wrap; 
-    margin-bottom: 25px;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .modal-podcast-cover {
-    width: 180px; 
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 8px; 
-    flex-shrink: 0; 
+  width: 180px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 .modal-text-details {
-    flex: 1; /* Allows this section to take up remaining space */
-    display: flex;
-    flex-direction: column; /* Stacks description, genres, updated date */
-    gap: 10px; 
-    min-width: 250px; /* Ensure description has enough space before wrapping */
+  flex: 1; /* Allows this section to take up remaining space */
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  min-width: 250px; /* Ensure description has enough space before wrapping */
 }
-.description-heading{
+.description-heading {
   font-size: 18px;
   color: #333;
-  margin-top: 2px;; 
-  font-weight: bold; 
+  margin-top: 2px;
+  font-weight: bold;
 }
 
 .modal-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-top: 5px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 5px;
 }
 
-.modal-genres p{
-    font-size: 15px;
-    color: #666;
-    margin-bottom: 5px; /* Space below genres and updated date */
+.modal-genres p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 5px; /* Space below genres and updated date */
 }
-.modal-last-updated{
+.modal-last-updated {
   font-size: 15px;
   color: #666;
   margin-bottom: 0;
 }
 
 .modal-genres span {
-    font-weight: normal; 
-    color: #333; /* Darker color for the actual genres */
+  font-weight: normal;
+  color: #333; 
 }
 
 /* Seasons Section Styling */
 .modal-seasons-section {
-    margin-top: 0;
-    padding-top: 20px;
-    border-top: 1px solid #eee; /* Separator line */
+  margin-top: 0;
+  padding-top: 20px;
+  border-top: 1px solid #eee; /* Separator line */
 }
-.modal-seasons-section h4 { 
-    font-size: 24px; 
-    color: #333;
-    margin-bottom: 15px;
-    text-align: left; 
+.modal-seasons-section h4 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .modal-season-list {
-    list-style: none; 
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .modal-season-item {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 10px 0;
-    border-bottom: 1px dashed #ddd; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ddd;
 }
 
 .modal-season-item:last-child {
-    border-bottom: none; /* No border for the last item */
+  border-bottom: none; /* No border for the last item */
 }
 
 .modal-season-title {
-    font-weight: bold;
-    color: #333;
+  font-weight: bold;
+  color: #333;
 }
 
 .modal-episode-count {
-    color: #777;
-    font-size: 0.9em;
+  color: #777;
+  font-size: 0.9em;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .modal-content {
-        padding: 20px;
-        max-width: 95%; /* Adjust for smaller screens */
-    }
-    .modal-header-section {
-        text-align: center; 
+  .modal-content {
+    padding: 20px;
+    max-width: 95%; /* Adjust for smaller screens */
+  }
+  .modal-header-section {
+    text-align: center;
 
     .modal-main-info {
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center; 
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .modal-podcast-title {
-        font-size: 28px; 
-        margin-bottom: 15px;
+      font-size: 28px;
+      margin-bottom: 15px;
     }
 
     .modal-podcast-cover {
-        width: 150px; 
-        height: 150px;
-        margin-bottom: 15px; 
+      width: 150px;
+      height: 150px;
+      margin-bottom: 15px;
     }
 
     .modal-text-details {
-        min-width: unset; /* Remove min-width to allow full flexibility */
-        width: 100%; /* Take full width */
+      min-width: unset; /* Remove min-width to allow full flexibility */
+      width: 100%; /* Take full width */
     }
 
     .modal-genres p,
     .modal-last-updated {
-        text-align: center; /* Center genre and updated date */
+      text-align: center; /* Center genre and updated date */
     }
 
     .modal-seasons-section h3 {
-        text-align: center;
+      text-align: center;
     }
-}}
+  }
+}
