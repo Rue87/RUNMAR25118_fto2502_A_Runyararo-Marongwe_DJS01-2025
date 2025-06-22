@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast Genres</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js" defer type="module"></script>
+  </head>
+  <body>
+    <header class="main-header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+      <img src="images/3y2mdbzd.png" alt="podcast logo" id="logo" />
+      <h1>PodcastApp</h1>
+      </div>
+        <div class="header-right">
+            <img src="images/search-icon.svg" alt="search" class="icon"/>
+            <img src="images/user_profile.png" alt="User Profile" class="avatar"/>
+        </div>
+        </div>
+    </header>
+    <main id="main-content"> 
+        <section class="filters">
+        <p class="filter-label">Filter By:</p> 
+        <div class="filter-dropdowns">
+        <select class="genre-filter" id="genre-filter-p">
+            <option value="all">All Genres</option>
+            </select>
+            <select class="sort-filter" id="sort-filter-p">
+                <option value="recent">Recently Updated</option>
+                <option value="title">Title</option>
+            </select>
+        </div>
+        </section>
+        <div id="podcast-container"></div>
+    
+      <!--Genres will be rendered here-->
+    </main>
+    
+
+    <!--Modal Template (Hidden by default)-->
+    <div id="podcast-modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <div id="modal-body">
+          <!--Genre details will be rendered here(dynamically)-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
